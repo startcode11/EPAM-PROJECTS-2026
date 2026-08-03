@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Customer Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1>NovaTrust Bank</h1>
+      <button id="darkModeBtn" class="mode-btn">🌙 Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Customer Profile -->
+    <section class="profile-section" aria-label="Customer Profile">
+      <h2>Customer Profile</h2>
+      <article class="profile-card">
+        <div class="profile-row">
+          <span class="label">Name</span>
+          <span id="custName" class="value"></span>
+        </div>
+        <div class="profile-row">
+          <span class="label">Customer ID</span>
+          <span id="custId" class="value"></span>
+        </div>
+        <div class="profile-row">
+          <span class="label">Account Number</span>
+          <span id="accNumber" class="value"></span>
+        </div>
+        <div class="profile-row">
+          <span class="label">Account Type</span>
+          <span id="accType" class="value"></span>
+        </div>
+        <div class="profile-row">
+          <span class="label">Branch</span>
+          <span id="branch" class="value"></span>
+        </div>
+        <div class="profile-row">
+          <span class="label">IFSC</span>
+          <span id="ifsc" class="value"></span>
+        </div>
+        <div class="profile-row">
+          <span class="label">Phone</span>
+          <span id="phone" class="value"></span>
+        </div>
+        <div class="profile-row">
+          <span class="label">Email</span>
+          <span id="email" class="value"></span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Dashboard Cards -->
+    <section class="dashboard-section" aria-label="Account Summary">
+      <h2>Account Summary</h2>
+      <div class="dashboard-grid">
+        <article class="dash-card">
+          <h3>Available Balance</h3>
+          <p id="balanceCard" class="dash-value">₹0.00</p>
+        </article>
+        <article class="dash-card">
+          <h3>Total Deposits</h3>
+          <p id="depositCard" class="dash-value">₹0.00</p>
+        </article>
+        <article class="dash-card">
+          <h3>Total Withdrawals</h3>
+          <p id="withdrawCard" class="dash-value">₹0.00</p>
+        </article>
+        <article class="dash-card">
+          <h3>Transactions</h3>
+          <p id="countCard" class="dash-value">0</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Deposit / Withdraw -->
+    <section class="actions-section" aria-label="Deposit and Withdraw">
+      <h2>Manage Money</h2>
+      <div class="actions-grid">
+
+        <article class="action-card">
+          <h3>Deposit</h3>
+          <input type="text" id="depositInput" placeholder="Enter amount" inputmode="decimal">
+          <button id="depositBtn" class="btn btn-deposit">Deposit</button>
+          <p class="error-msg" id="depositError"></p>
+        </article>
+
+        <article class="action-card">
+          <h3>Withdraw</h3>
+          <input type="text" id="withdrawInput" placeholder="Enter amount" inputmode="decimal">
+          <button id="withdrawBtn" class="btn btn-withdraw">Withdraw</button>
+          <p class="error-msg" id="withdrawError"></p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Transactions -->
+    <section class="transactions-section" aria-label="Transaction History">
+      <h2>Transaction History</h2>
+
+      <div class="transaction-controls">
+        <input type="text" id="searchInput" placeholder="Search by type or amount...">
+
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="deposit">Deposits</button>
+          <button class="filter-btn" data-filter="withdraw">Withdrawals</button>
+        </div>
+      </div>
+
+      <div id="transactionList" class="transaction-list">
+        <!-- transactions get rendered here by script.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>NovaTrust Bank &mdash; Case Study Project | Made for academic purposes only</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

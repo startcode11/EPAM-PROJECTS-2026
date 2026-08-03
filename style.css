@@ -1,0 +1,386 @@
+/* ---------------------------------
+   Basic reset
+--------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f2f5fa;
+  color: #1e293b;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+  color: #1d3557;
+}
+
+/* ---------------------------------
+   Header
+--------------------------------- */
+.site-header {
+  background-color: #1d3557;
+  padding: 16px 24px;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.mode-btn {
+  background-color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.mode-btn:hover {
+  background-color: #e2e8f0;
+}
+
+/* ---------------------------------
+   Layout
+--------------------------------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  border-left: 4px solid #457b9d;
+  padding-left: 10px;
+}
+
+/* ---------------------------------
+   Profile card
+--------------------------------- */
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 6px;
+}
+
+.profile-row .label {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.profile-row .value {
+  font-weight: 600;
+}
+
+/* ---------------------------------
+   Dashboard cards
+--------------------------------- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.dash-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.dash-card:hover {
+  transform: translateY(-3px);
+}
+
+.dash-card h3 {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.dash-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1d3557;
+}
+
+/* ---------------------------------
+   Actions (deposit / withdraw)
+--------------------------------- */
+.actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.action-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.action-card input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 10px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.action-card input:focus {
+  outline: none;
+  border-color: #457b9d;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.btn-deposit {
+  background-color: #2a9d8f;
+}
+
+.btn-deposit:hover {
+  background-color: #21867a;
+}
+
+.btn-withdraw {
+  background-color: #e76f51;
+}
+
+.btn-withdraw:hover {
+  background-color: #d15a3c;
+}
+
+.error-msg {
+  color: #d62828;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  min-height: 18px;
+}
+
+/* ---------------------------------
+   Transactions
+--------------------------------- */
+.transaction-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+#searchInput {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.filter-btn.active {
+  background-color: #457b9d;
+  color: #ffffff;
+  border-color: #457b9d;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.transaction-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #457b9d;
+}
+
+.transaction-item.deposit {
+  border-left-color: #2a9d8f;
+}
+
+.transaction-item.withdraw {
+  border-left-color: #e76f51;
+}
+
+.txn-left .txn-type {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.txn-left .txn-date {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.txn-right {
+  text-align: right;
+}
+
+.txn-amount {
+  font-weight: 700;
+}
+
+.txn-amount.deposit {
+  color: #2a9d8f;
+}
+
+.txn-amount.withdraw {
+  color: #e76f51;
+}
+
+.txn-balance {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.no-transactions {
+  text-align: center;
+  color: #94a3b8;
+  padding: 20px;
+}
+
+/* ---------------------------------
+   Footer
+--------------------------------- */
+.site-footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* ---------------------------------
+   Dark mode
+--------------------------------- */
+body.dark {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark .site-header {
+  background-color: #0b1120;
+}
+
+body.dark .profile-card,
+body.dark .dash-card,
+body.dark .action-card,
+body.dark .transaction-item,
+body.dark #searchInput,
+body.dark .filter-btn {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+body.dark h1, body.dark h2, body.dark h3 {
+  color: #e2e8f0;
+}
+
+body.dark .dash-value {
+  color: #f1f5f9;
+}
+
+body.dark .profile-row {
+  border-bottom-color: #334155;
+}
+
+body.dark .mode-btn {
+  background-color: #334155;
+  color: #e2e8f0;
+}
+
+/* ---------------------------------
+   Responsive
+--------------------------------- */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+}
